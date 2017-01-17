@@ -64,9 +64,18 @@
 				if (!/\S/g.test(this.newTodo)) {
 					return alert('不能为空哦');
 				}
+				//获取当前时间
+				var time = new Date(),
+				    year = time.getFullYear(),
+				    month = time.getMonth() + 1,
+				    day = time.getDate(),
+				    hour = time.getHours(),
+				    minute = time.getMinutes(),
+				    timeStr = year + '.' + month + '.' + day + '>' + hour + ':' + minute;
+
 				this.todoList.push({
 					title: this.newTodo,
-					createdAt: new Date(),
+					createdAt: timeStr,
 					done: false
 				});
 				this.newTodo = '';
@@ -79,13 +88,20 @@
 		created: function created() {
 			var _this = this;
 
+			//将数据保存在localStorage里防止关闭浏览器丢失
 			window.onbeforeunload = function () {
 				var dataString = JSON.stringify(_this.todoList);
 				window.localStorage.setItem('myTodos', dataString);
+				var todoString = JSON.stringify(_this.newTodo);
+				window.localStorage.setItem('newTodo', todoString);
 			};
 			var oldDataString = window.localStorage.getItem('myTodos');
 			var oldData = JSON.parse(oldDataString);
 			this.todoList = oldData || [];
+
+			var oldTodos = window.localStorage.getItem('newTodo');
+			var oldTodo = JSON.parse(oldTodos);
+			this.newTodo = oldTodo || '';
 		}
 	});
 
