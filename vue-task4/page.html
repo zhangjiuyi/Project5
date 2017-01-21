@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>todo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <section id="signInAndSignUp" v-if="!currentUser">
+        <div class="wrap">
+          <h1>{{msg}}</h1>
+          <label :class="{col: actionType==='signUp'}"><input type="radio" name="type" v-model="actionType" value="signUp" >注册</label>
+          <label :class="{col: actionType=='login'}"><input type="radio" name="type" v-model="actionType" value="login">登录</label>
+        </div>
+        <div class="signUp" v-if="actionType==='signUp'">
+          <form @submit.prevent=signUp>
+            <div class="formRow">
+              <input type="text" v-model="formData.username" placeholder="用户名">
+            </div>
+            <div class="formRow">
+              <input type="password" v-model="formData.password" placeholder="密码">
+            </div>
+            <!--<div class="formActions">-->
+              <!--<input type="submit" value="注册">-->
+            <!--</div>-->
+            <button>注册</button>
+          </form>
+        </div>
+
+        <div class="login" v-if="actionType=='login'">
+          <form @submit.prevent=login>
+            <div class="formRow">
+              <input type="text" v-model="formData.username" placeholder="用户名">
+            </div>
+            <div class="formRow">
+              <input type="password" v-model="formData.password" placeholder="密码">
+            </div>
+            <!--<div class="formActions">-->
+              <!--<input type="submit" value="登入">-->
+            <!--</div>-->
+            <button>登录</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="todo" v-if="currentUser">
+        <p>当前用户: <span class="username">{{user}}</span><button @click="logout">退出登录</button></p>
+        <h2>{{msg}}</h2>
+        <div class="newTask">
+          <input id="text"
+                 placeholder=" to do list"
+                 type="text"
+                 v-model="newTodo"
+                 @keyup.enter="addTodo">
+        </div>
+        <ol class="todos">
+          <li v-for="todo in todoList"
+              :class="{finish: todo.done}"
+              :title="todo.createdAt">
+            <input type="checkbox" v-model="todo.done">
+            {{ todo.title }}
+            <span v-if="!todo.done">未完成</span>
+            <span v-if="todo.done">已完成</span>
+            <button @click="removeTodo(todo)">X</button>
+          </li>
+        </ol>
+      </section>
+    </div>
+    <script src="bundle.js"></script>
+  </body>
+</html>
