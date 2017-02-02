@@ -57,13 +57,15 @@
                  @keyup.enter="addTodo">
         </div>
         <ol class="todos">
-          <li v-for="todo in todoList"
+          <li v-for="(todo,idx) in todoList"
               :class="{finish: todo.done}"
               :title="todo.createdAt">
-            <input type="checkbox" v-model="todo.done">
+            <input type="checkbox" v-model="todo.done" @click="updateTodos(idx)">
             {{ todo.title }}
             <span v-if="!todo.done">未完成</span>
             <span v-if="todo.done">已完成</span>
+            <!--<span v-if="!todo.done">未完成</span>-->
+            <!--<span>已完成</span>-->
             <button @click="removeTodo(todo)">X</button>
           </li>
         </ol>

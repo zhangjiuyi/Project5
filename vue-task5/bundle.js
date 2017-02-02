@@ -94,7 +94,11 @@
 	        });
 	      }
 	    },
-	    updateTodos: function updateTodos() {
+	    updateTodos: function updateTodos(idx) {
+	      //将状态保存到服务器
+	      if (typeof idx === 'number') {
+	        this.todoList[idx].done = !this.todoList[idx].done;
+	      }
 	      var dataString = JSON.stringify(this.todoList);
 	      var avTodos = _leancloudStorage2.default.Object.createWithoutData('AllTodos', this.todoList.id);
 	      avTodos.set('content', dataString);

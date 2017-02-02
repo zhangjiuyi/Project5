@@ -39,8 +39,12 @@ var app = new Vue({
           })
       }
 		},
-		updateTodos() {
-			let dataString = JSON.stringify(this.todoList)
+		updateTodos(idx) {
+    	//将状态保存到服务器
+			if(typeof idx === 'number'){
+        this.todoList[idx].done = !this.todoList[idx].done
+      }
+      let dataString = JSON.stringify(this.todoList)
 			let avTodos = AV.Object.createWithoutData('AllTodos',this.todoList.id)
 			avTodos.set('content',dataString)
 			avTodos.save().then(()=>{
