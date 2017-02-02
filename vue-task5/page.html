@@ -64,8 +64,6 @@
             {{ todo.title }}
             <span v-if="!todo.done">未完成</span>
             <span v-if="todo.done">已完成</span>
-            <!--<span v-if="!todo.done">未完成</span>-->
-            <!--<span>已完成</span>-->
             <button @click="removeTodo(todo)">X</button>
           </li>
         </ol>

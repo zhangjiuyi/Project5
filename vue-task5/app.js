@@ -40,7 +40,7 @@ var app = new Vue({
       }
 		},
 		updateTodos(idx) {
-    	//将状态保存到服务器
+    	//根据idx参数将状态保存到服务器
 			if(typeof idx === 'number'){
         this.todoList[idx].done = !this.todoList[idx].done
       }
@@ -101,12 +101,11 @@ var app = new Vue({
       this.saveOrUpdateTodos()
     },
 		signUp() {
-			console.log('我是注册')
       // 新建 AVUser 对象实例
       let user = new AV.User();
       // 设置用户名
       user.setUsername(this.formData.username);
-      console.log(this.formData.username)
+      // console.log(this.formData.username)
       // 设置密码
       user.setPassword(this.formData.password);
 
@@ -120,10 +119,8 @@ var app = new Vue({
       });
 		},
 		login() {
-      console.log('我是登录')
       AV.User.logIn(this.formData.username, this.formData.password).then((loginedUser) =>{
       	console.log('登录成功')
-      	console.log(loginedUser)
 				this.user = this.formData.username
         this.currentUser = this.getCurrentUser()
 				this.fetchTodos()  // 登录成功后读取 todos
