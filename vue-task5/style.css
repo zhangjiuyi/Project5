@@ -1,0 +1,86 @@
+
+html,body,li{
+  margin: 0;
+  padding: 0;
+}
+html{
+  background: #f7f7f7;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+#signInAndSignUp{
+  text-align: center;
+}
+#signInAndSignUp .wrap>h1{
+  color: #a6c74e;
+}
+#signInAndSignUp .wrap input{
+  display: none;
+}
+#signInAndSignUp .wrap label{
+  color: #ccc;
+  font-size: 17px;
+  transition: .3s;
+  padding: 0 5px;
+}
+#signInAndSignUp .wrap label.col{
+  color: #468eff;
+  border-bottom: 2px solid #468eff;
+}
+
+
+.signUp input,.login input{
+  height: 30px;
+  width: 190px;
+  margin: 5px 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+#signInAndSignUp button{
+  height: 30px;
+  width: 190px;
+  border-radius: 5px;
+  border: none;
+  background: rgba(146,117,117,1);
+  color: #fff;
+  opacity: .6;
+  outline: none;
+  transition: .3s;
+}
+#signInAndSignUp button:hover{
+  opacity: 1;
+}
+#app{
+  width: 600px;
+  padding: 50px;
+  margin: 0 auto;
+}
+#todo>p{
+  font-size: 14px;
+  color: #848484;
+}
+#todo .username{
+  color: #4343c5;
+  margin-right: 10px;
+}
+#todo h2{
+  color: #927575;
+}
+#text{
+  height: 30px;
+  width: 190px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+#todo .todos li{
+  margin-top: 10px;
+  color: #525254;
+}
+#todo .todos span{
+  font-size: 12px;
+  color: #ccc;
+}
+.finish{
+  text-decoration:line-through;
+}
