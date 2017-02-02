@@ -115,8 +115,8 @@
 	      avTodos.set('content', dataString);
 	      avTodos.setACL(acl); //设置访问控制
 	      avTodos.save().then(function (todo) {
-	        _this2.todoList = todo.id; //把id挂到this.todoList上,否则下次不会调用updateTodos
-	        alert('保存成功');
+	        _this2.todoList.id = todo.id; // 把id挂到this.todoList.id上,否则下次不会调用updateTodos
+	        console.log('保存成功');
 	      }, function (error) {
 	        console.log('保存失败');
 	      });
@@ -140,7 +140,6 @@
 	          hour = time.getHours(),
 	          minute = time.getMinutes(),
 	          timeStr = year + '.' + month + '.' + day + '>' + hour + ':' + minute;
-	      // debugger
 	      this.todoList.push({
 	        title: this.newTodo,
 	        createdAt: timeStr,
@@ -162,6 +161,7 @@
 	      var user = new _leancloudStorage2.default.User();
 	      // 设置用户名
 	      user.setUsername(this.formData.username);
+	      console.log(this.formData.username);
 	      // 设置密码
 	      user.setPassword(this.formData.password);
 
@@ -216,7 +216,6 @@
 	      var userString = JSON.stringify(_this5.user);
 	      window.localStorage.setItem('user', userString);
 	    };
-
 	    var oldUser = window.localStorage.getItem('user');
 	    var oldUsername = JSON.parse(oldUser);
 	    this.user = oldUsername || '';

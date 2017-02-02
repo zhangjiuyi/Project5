@@ -58,8 +58,8 @@ var app = new Vue({
       avTodos.set('content',dataString);
       avTodos.setACL(acl) //设置访问控制
       avTodos.save().then((todo) => {
-      	this.todoList = todo.id    //把id挂到this.todoList上,否则下次不会调用updateTodos
-        alert('保存成功')
+      	this.todoList.id = todo.id  // 把id挂到this.todoList.id上,否则下次不会调用updateTodos
+        console.log('保存成功')
       }, function(error){
         console.log('保存失败')
       });
@@ -83,7 +83,6 @@ var app = new Vue({
         hour = time.getHours(),
         minute = time.getMinutes(),
 				timeStr = year+'.'+ month+'.'+day+'>'+hour+':'+minute;
-      // debugger
 			this.todoList.push({
 				title: this.newTodo,
 				createdAt: timeStr,
@@ -103,6 +102,7 @@ var app = new Vue({
       let user = new AV.User();
       // 设置用户名
       user.setUsername(this.formData.username);
+      console.log(this.formData.username)
       // 设置密码
       user.setPassword(this.formData.password);
 
@@ -150,7 +150,6 @@ var app = new Vue({
       let userString = JSON.stringify(this.user);
       window.localStorage.setItem('user',userString);
 		}
-
     let oldUser = window.localStorage.getItem('user')
     let oldUsername = JSON.parse(oldUser)
     this.user = oldUsername || ''
