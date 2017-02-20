@@ -1,5 +1,5 @@
 
-.page{
+.page {
   height: 100vh;
   display: -ms-flexbox;
   display: flex;
@@ -7,7 +7,7 @@
       flex-direction: column;
   background: #eaebec;
 }
-.page>main{
+.page > main {
   -ms-flex-positive: 1;
       flex-grow: 1;
   max-width: 1440px;
@@ -23,15 +23,22 @@
   -ms-flex-item-align: center;
       align-self: center;
 }
-#resumeEditor{
+#resumeEditor {
   width: 35%;
   background: #444;
 }
-#resumePreview{
+#resumePreview {
   -ms-flex-positive: 1;
       flex-grow: 1;
   margin-left: 16px;
   background: #777;
+}
+svg.icon {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  vertical-align: -0.1em;
+  font-size: 16px;
 }
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
@@ -500,11 +507,11 @@ template {
   box-sizing: border-box;
 }
 
-#topbar{
+#topbar[data-v-89a0fc02] {
   background: #fff;
-  box-shadow: 0 1px 3px 0 raba(0,0,0,0.25);
+  box-shadow: 0 1px 3px 0 raba(0, 0, 0, 0.25);
 }
-#topbar>.wrapper{
+#topbar .wrapper[data-v-89a0fc02] {
   min-width: 1024px;
   max-width: 1440px;
   margin: 0 auto;
@@ -517,22 +524,90 @@ template {
       align-items: center;
   padding: 0 16px;
 }
-#topbar .logo{
+#topbar .logo[data-v-89a0fc02] {
   color: #000;
   font-size: 24px;
 }
-
-
-
-#resumeEditor{
-  /*color: red;*/
-  background: #fff;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25)
+button[data-v-89a0fc02] {
+  width: 72px;
+  height: 32px;
+  border: none;
+  font-size: 18px;
+  background: #ddd;
+  color: #222;
+  cursor: pointer;
+}
+button[data-v-89a0fc02]:hover {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+button.primary[data-v-89a0fc02] {
+  background: #02af5f;
+  color: #fff;
 }
 
-#resumePreview{
+#resumeEditor[data-v-75f33a9b] {
   background: #fff;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25)
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  overflow: auto;
+}
+#resumeEditor > nav[data-v-75f33a9b] {
+  width: 80px;
+  background: black;
+  color: white;
+}
+#resumeEditor > nav ol li[data-v-75f33a9b] {
+  height: 48px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+#resumeEditor > nav ol li.active[data-v-75f33a9b] {
+  background: white;
+  color: black;
+}
+#resumeEditor .panels[data-v-75f33a9b] {
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+#resumeEditor .panels li[data-v-75f33a9b] {
+  padding: 24px;
+}
+#resumeEditor svg.icon[data-v-75f33a9b] {
+  width: 24px;
+  height: 24px;
+}
+ol[data-v-75f33a9b] {
+  list-style: none;
+}
+.resumeField label[data-v-75f33a9b] {
+  display: block;
+}
+.resumeField input[type=text][data-v-75f33a9b] {
+  margin: 16px 0;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 3px 0 raba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 40px;
+  padding: 0 8px;
+}
+hr[data-v-75f33a9b] {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 24px 0;
+}
+
+#resumePreview[data-v-394c300a] {
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 h1[data-v-62ea34fe], h2[data-v-62ea34fe] {
@@ -550,4 +625,4 @@ a[data-v-62ea34fe] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.e0f041ec967f93fb3b8fff8adab7fa62.css.map*/
+/*# sourceMappingURL=app.f8e78b3ac14deb34e920a20ab9731046.css.map*/
