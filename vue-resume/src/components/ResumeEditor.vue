@@ -54,7 +54,7 @@
           },
           'work history': [
             {company: 'AL', content: '我的第二份工作是'},
-            {company: 'TX', content: '我的第一份工作是'}
+            {company: 'TX', content: '我的第二份工作是'}
           ],
           education: [
             {school: 'AL', content: '文字'},
