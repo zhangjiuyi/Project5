@@ -24,7 +24,7 @@
       align-self: center;
 }
 #resumeEditor {
-  width: 35%;
+  min-width: 35%;
   background: #444;
 }
 #resumePreview {
@@ -608,6 +608,52 @@ hr[data-v-75f33a9b] {
 #resumePreview[data-v-394c300a] {
   background: #fff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  padding: 2em;
+  color: #333;
+  line-height: 1.2;
+  overflow: auto;
+}
+#resumePreview *[data-v-394c300a] {
+  box-sizing: border-box;
+  font-variant: normal;
+  font-weight: normal;
+}
+#resumePreview ol[data-v-394c300a] {
+  list-style: none;
+}
+#resumePreview section + section[data-v-394c300a] {
+  margin-top: 2em;
+}
+#resumePreview p[data-v-394c300a] {
+  white-space: pre-line;
+}
+#resumePreview section > h2[data-v-394c300a]:first-child {
+  background: #ddd;
+  display: inline-block;
+  padding: .2em;
+  margin-bottom: .5em;
+}
+#resumePreview section[data-name='profile'] > h1[data-v-394c300a] {
+  margin: .1em 0;
+  font-size: 4em;
+}
+#resumePreview section[data-name='workHistory'] li + li[data-v-394c300a],
+#resumePreview section[data-name='projects'] li + li[data-v-394c300a],
+#resumePreview section[data-name='awards'] li + li[data-v-394c300a] {
+  margin-top: 1em;
+}
+#resumePreview section[data-name='workHistory'] li[data-v-394c300a],
+#resumePreview section[data-name='projects'] li[data-v-394c300a],
+#resumePreview section[data-name='awards'] li[data-v-394c300a] {
+  border-bottom: 1px solid #999;
+  padding-bottom: .3em;
+  margin-bottom: .3em;
+}
+#resumePreview section[data-name='education'] li[data-v-394c300a] {
+  line-height: 1.5;
+}
+#resumePreview section[data-name='contacts'] td[data-v-394c300a]:first-child {
+  padding-right: 1em;
 }
 
 h1[data-v-62ea34fe], h2[data-v-62ea34fe] {
@@ -625,4 +671,4 @@ a[data-v-62ea34fe] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.f8e78b3ac14deb34e920a20ab9731046.css.map*/
+/*# sourceMappingURL=app.a1050dafeafe3b181f5d4b403cf549ed.css.map*/
