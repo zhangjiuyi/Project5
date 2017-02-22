@@ -11,14 +11,17 @@
         </li>
       </ol>
     </nav>
+
     <ol  class="panels">
       <li v-for="item in resume.config" v-show="item.field === selected">
         <div v-if="resume[item.field] instanceof Array">
+
           <div class="subitem" v-for="subitem in resume[item.field]">
             <div class="resumeField" v-for="(value,key) in subitem">
-              <label> {{key}} </label>
-              <input type="text" :value="value">
+              <label>{{key}}</label>
+              <input type="text" v-model="subitem[key]">
             </div>
+
             <hr>
           </div>
         </div>
@@ -27,6 +30,7 @@
           <label>{{key}}</label>
           <input type="text" v-model="resume[item.field][key]">
         </div>
+
       </li>
     </ol>
   </div>
@@ -35,45 +39,24 @@
 <script>
   export default {
   	name: 'ResumeEditor',
-    data() {
-  		return {
-  			selected: 'profile',
-        resume: {
-          config: [
-            {field: 'profile', icon: 'id'},
-            {field: 'work history', icon: 'work'},
-            {field: 'education', icon: 'book'},
-            {field: 'projects', icon: 'heart'},
-            {field: 'awards', icon: 'cup'},
-            {field: 'contacts', icon: 'phone'},
-          ],
-          profile: {
-  					name: '',
-            city: '',
-            title: '',
-          },
-          'work history': [
-            {company: 'AL', content: '我的第二份工作是'},
-            {company: 'TX', content: '我的第二份工作是'}
-          ],
-          education: [
-            {school: 'AL', content: '文字'},
-            {school: 'TX', content: '文字'}
-          ],
-          projects: [
-            { name: 'proA', content: '文字'},
-            { name: 'proB', content: '文字'}
-          ],
-          awards: [
-            { name: 'awA', content: '文字'},
-            { name: 'awB', content: '文字'}
-          ],
-          contacts: [
-            { contact: 'phone', content: '18638517509'},
-            { contact: 'qq', content: '12324345'}
-          ],
+    computed: {
+  		count() {
+        return this.$store.state.count
+      },
+      selected: {
+      	get() {
+          return this.$store.state.selected
+        },
+        set(value) {
+          return this.$store.commit('switchTab',value)
         }
+      },
+      resume() {
+        return this.$store.state.resume
       }
+    },
+    methods: {
+
     }
   }
 </script>

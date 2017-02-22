@@ -19,8 +19,11 @@
   import ResumePreview from './components/ResumePreview'
   import icons from './assets/icons'
 
+  import store from './store/index'
+
 export default {
   name: 'app',
+  store,
   components: {
     Topbar,
     ResumeEditor,
@@ -58,7 +61,7 @@ export default {
   }
 
   #resumeEditor{
-    width: 35%;
+    min-width: 35%;
     background: #444;
   }
 
