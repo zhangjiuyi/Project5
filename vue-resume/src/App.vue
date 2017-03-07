@@ -1,12 +1,22 @@
 <template>
-  <div class="page">
-    <header>
-      <Topbar/>
-    </header>
-    <main>
-      <ResumeEditor/>
-      <ResumePreview/>
-    </main>
+  <!--<div class="page">-->
+    <!--<header>-->
+      <!--<Topbar/>-->
+    <!--</header>-->
+    <!--<main>-->
+      <!--<ResumeEditor/>-->
+      <!--<ResumePreview/>-->
+    <!--</main>-->
+  <div>
+    <div class="page">
+      <header>
+        <Topbar/>
+      </header>
+      <main>
+        <ResumeEditor/>
+        <ResumePreview/>
+      </main>
+    </div>
   </div>
 </template>
 
@@ -20,8 +30,14 @@
   import icons from './assets/icons'
 
   import store from './store/index'
+  import AV from './lib/leancloud'
+  console.log('我是app')
 
-export default {
+  import getAVUser from './lib/getAVUser'
+
+
+
+  export default {
   name: 'app',
   store,
   components: {
@@ -35,6 +51,12 @@ export default {
   },
   created() {
   	document.body.insertAdjacentHTML('afterbegin', icons)
+    let state = localStorage.getItem('state')
+    if(state){
+  		state = JSON.parse(state)
+    }
+    this.$store.commit('initState',state)
+    this.$store.commit('setUser',getAVUser())
   }
 }
 </script>

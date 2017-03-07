@@ -509,7 +509,7 @@ template {
 
 #topbar[data-v-89a0fc02] {
   background: #fff;
-  box-shadow: 0 1px 3px 0 raba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 #topbar .wrapper[data-v-89a0fc02] {
   min-width: 1024px;
@@ -528,7 +528,7 @@ template {
   color: #000;
   font-size: 24px;
 }
-button[data-v-89a0fc02] {
+#topbar .button[data-v-89a0fc02] {
   width: 72px;
   height: 32px;
   border: none;
@@ -536,14 +536,187 @@ button[data-v-89a0fc02] {
   background: #ddd;
   color: #222;
   cursor: pointer;
+  text-decoration: none;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  vertical-align: middle;
 }
-button[data-v-89a0fc02]:hover {
+#topbar .button[data-v-89a0fc02]:hover {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-button.primary[data-v-89a0fc02] {
+#topbar .button.primary[data-v-89a0fc02] {
   background: #02af5f;
   color: #fff;
 }
+#topbar .actions[data-v-89a0fc02] {
+  display: -ms-flexbox;
+  display: flex;
+}
+#topbar .actions .userActions[data-v-89a0fc02] {
+  margin-right: 3em;
+}
+#topbar .actions .userActions .welcome[data-v-89a0fc02] {
+  margin-right: .5em;
+}
+
+.dialogWrapper[data-v-eb875f96] {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.dialog[data-v-eb875f96] {
+  background: white;
+  min-height: 4em;
+  min-width: 10em;
+}
+.dialog > header[data-v-eb875f96] {
+  padding: 16px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.dialog > main[data-v-eb875f96] {
+  padding: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #resumeEditor[data-v-75f33a9b] {
   background: #fff;
@@ -671,4 +844,4 @@ a[data-v-62ea34fe] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.a1050dafeafe3b181f5d4b403cf549ed.css.map*/
+/*# sourceMappingURL=app.35cd37879bba54299909cf0702871f52.css.map*/
