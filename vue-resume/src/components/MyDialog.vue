@@ -2,8 +2,7 @@
 * Created by zhangjiuyi on 2017/3/4.
 */
 <template>
-  <!--<div class="dialogWrapper" v-show="visible">-->
-  <div class="dialogWrapper" v-show="true">
+  <div class="dialogWrapper" v-show="visible">
     <div class="dialog">
       <header>{{title}}
         <span class="close" @click="close">X</span>
